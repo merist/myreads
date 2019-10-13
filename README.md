@@ -13,4 +13,4 @@ Open http://localhost:3000 to view it in the browser.
 
 
 ## Copyright and License 
-Design based on [Myreads starter] https://github.com/udacity/reactnd-project-myreads-starter by Udacity.
+Design based on [Myreads starter](https://github.com/udacity/reactnd-project-myreads-starter) by Udacity.
