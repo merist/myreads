@@ -1,9 +1,12 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-#To run locally:
+## To run locally:
 git clone https://github.com/merist/myreads.git
+
 cd myreads
+
 npm install
+
 npm start
 
 Open http://localhost:3000 to view it in the browser.
