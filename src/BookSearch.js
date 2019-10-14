@@ -12,17 +12,18 @@ class BookSearch extends Component {
 
   updateSearchText = searchText => {
     this.setState({ searchText })
-    if (!searchText) {
+    if (!searchText  || (searchText === '')) {
       this.setState({
         books: []
       })
     } else {
       BooksAPI.search(searchText)
       .then(books => {
-        books.map(book => {
-          this.props.myBooks.forEach(myBook => {
-             book.shelf = myBook.shelf
-          })
+        books.map(book => { 
+          book.shelf = 'none';                 
+          this.props.myBooks.forEach(myBook => {          
+            book.id===myBook.id && (book.shelf = myBook.shelf)            
+          });
         })
         this.setState({
           books: books,
@@ -47,7 +48,7 @@ class BookSearch extends Component {
     if (notFound === true) {
       displayResults = <span className="search-books-results"> No results found. Change your search and try again</span>
     } else {
-      displayResults = books.map(book => (<BookDetails book={book} onUpdateShelf={onUpdateShelf} shelf={book.shelf} key={book.id}/>))
+      displayResults = books.map(book => (<BookDetails book={book} onUpdateShelf={onUpdateShelf} key={book.id}/>))
     }
     return (
       <div>

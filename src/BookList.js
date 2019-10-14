@@ -22,7 +22,6 @@ class BookList extends Component {
                 <BookDetails
                   onUpdateShelf={onUpdateShelf}
                   book={book}
-                  shelf={shelf.title}
                   key={book.id}
                 />
               ))}

@@ -10,7 +10,7 @@ class BookDetails extends Component {
     }
   }
   render() {
-    const {book, onUpdateShelf, shelf}  = this.props
+    const {book, onUpdateShelf}  = this.props
     return(   
       <li key={book.id}>
         <div className="book">
@@ -18,12 +18,12 @@ class BookDetails extends Component {
             <div className="book-cover" className="book-cover img-thumbnail" 
                   style={{backgroundImage: "url(" + this.getImageLink(book) + ")"}}>      
               <div className="book-shelf-changer">
-                <select value={shelf} onChange={(e) => onUpdateShelf(book, e.target.value)}>
-                  <option value="disabled" disabled>Move to...</option>
-                  <option value="none">None</option>
+                <select value={book.shelf} onChange={(e) => onUpdateShelf(book, e.target.value)}>
+                  <option value="disabled" disabled>Move to...</option>                 
                   <option value="currentlyReading">Currently Reading</option>
                   <option value="wantToRead">Want to Read</option>
-                  <option value="read">Read</option>              
+                  <option value="read">Read</option> 
+                  <option value="none">None</option>             
                 </select> 
               </div>     
             </div>
